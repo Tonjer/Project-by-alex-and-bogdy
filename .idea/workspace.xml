@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="adb4974d-7662-4728-90ac-c743d4108448" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/consolehandler/ConsoleReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consolehandler/ConsoleReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/consolehandler/handlers/RemoveSpaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +14,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
@@ -30,7 +36,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "task1-ConsoleHandler",
+    "git-widget-placeholder": "task2-RemoveSpaces",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -71,7 +77,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/task1-ConsoleHandler" />
+                        <option value="task2-RemoveSpaces" />
                       </list>
                     </value>
                   </entry>
