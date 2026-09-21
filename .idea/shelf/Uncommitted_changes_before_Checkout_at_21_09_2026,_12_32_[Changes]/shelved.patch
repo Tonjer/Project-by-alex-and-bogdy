@@ -1,0 +1,17 @@
+Index: src/main/java/consolehandler/ConsoleReader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package consolehandler;\n\nimport consolehandler.handlers.TextHandler;\n//import consolehandler.handlers.ToLowerCase; не знаю, пригодится ли?\n\nimport java.util.Scanner;\n\npublic class ConsoleReader {\n    private final TextHandler handler; //подсказала нейронка, для доп безопасности кода\n    public ConsoleReader(TextHandler handler){\n        this.handler = handler;\n    }\n    public void run(){\n        Scanner scanner = new Scanner(System.in);\n        System.out.println(\"Введите текст (используйте exit для выхода)\");\n        while (true){\n            System.out.println(\">\");\n            String line = scanner.nextLine();\n            if (\"exit\".equalsIgnoreCase(line)) break;\n            System.out.println(handler.process(line));\n        }\n        scanner.close();\n    }\n}\n
+===================================================================
+diff --git a/src/main/java/consolehandler/ConsoleReader.java b/src/main/java/consolehandler/ConsoleReader.java
+--- a/src/main/java/consolehandler/ConsoleReader.java	(revision 2628fdefba013d9577ff2385ac221adea660f109)
++++ b/src/main/java/consolehandler/ConsoleReader.java	(date 1789973489442)
+@@ -1,7 +1,7 @@
+ package consolehandler;
+ 
+ import consolehandler.handlers.TextHandler;
+-//import consolehandler.handlers.ToLowerCase; не знаю, пригодится ли?
++//import consolehandler.handlers.ToLowerCase; не знаю, пригодится ли? а для чего нам ловер или аппер?
+ 
+ import java.util.Scanner;
+ 
