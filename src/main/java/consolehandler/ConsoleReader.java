@@ -1,7 +1,6 @@
 package consolehandler;
 
 import consolehandler.handlers.TextHandler;
-//import consolehandler.handlers.ToLowerCase; не знаю, пригодится ли?
 
 import java.util.Scanner;
 

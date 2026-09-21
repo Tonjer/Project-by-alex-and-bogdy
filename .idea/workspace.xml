@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="adb4974d-7662-4728-90ac-c743d4108448" name="Changes" comment="" />
+    <list default="true" id="adb4974d-7662-4728-90ac-c743d4108448" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/consolehandler/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/consolehandler/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,6 +31,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
