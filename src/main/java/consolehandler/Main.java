@@ -3,7 +3,7 @@ package consolehandler;
 import java.util.Scanner;
 
 public class Main {
-    public static void main (String [] args) {
+    public static void main(String [] args){
         CommandRouter router = new CommandRouter();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Бот 'Где поесть?' запущен!");
