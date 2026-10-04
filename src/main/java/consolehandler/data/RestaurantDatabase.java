@@ -23,82 +23,70 @@ public class RestaurantDatabase {
 
         ObjectMapper mapper = new ObjectMapper();
 
-        try (InputStream inputStream =
-                     getClass()
-                             .getClassLoader()
-                             .getResourceAsStream("restaurant.json")) {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("restaurant.json")) {
 
             if (inputStream == null) {
-                throw new RuntimeException(
-                        "Файл restaurant.json не найден!"
-                );
+                throw new RuntimeException("Файл restaurant.json не найден!");
             }
 
-            return mapper.readValue(
-                    inputStream,
-                    new TypeReference<List<Restaurant>>() {
+            return mapper.readValue(inputStream, new TypeReference<List<Restaurant>>() {
                     }
             );
 
         } catch (Exception e) {
-            throw new RuntimeException(
-                    "Ошибка при загрузке базы ресторанов",
-                    e
-            );
+            throw new RuntimeException("Ошибка при загрузке базы ресторанов", e);
         }
     }
 
-    public List<Restaurant> getAllRestaurants() {
-        return new ArrayList<>(restaurants);
-    }
-
-    public List<Restaurant> findByCuisine(String cuisine) {
-
-        List<Restaurant> result = new ArrayList<>();
-
-        for (Restaurant restaurant : restaurants) {
-
-            if (restaurant.getCuisine()
-                    .equalsIgnoreCase(cuisine)) {
-
-                result.add(restaurant);
-            }
-        }
-
-        return result;
-    }
-
-    public List<Restaurant> findByDish(String dish) {
-
-        List<Restaurant> result = new ArrayList<>();
-
-        for (Restaurant restaurant : restaurants) {
-
-            for (String restaurantDish : restaurant.getDishes()) {
-
-                if (restaurantDish.equalsIgnoreCase(dish)) {
-                    result.add(restaurant);
-                    break;
-                }
-            }
-        }
-
-        return result;
-    }
-
-    public List<Restaurant> findByMaxPrice(int maxPrice) {
-
-        List<Restaurant> result = new ArrayList<>();
-
-        for (Restaurant restaurant : restaurants) {
-
-            if (restaurant.getAverageCheck() <= maxPrice) {
-                result.add(restaurant);
-            }
-        }
-
-        return result;
-    }
+//    public List<Restaurant> getAllRestaurants() {
+//        return new ArrayList<>(restaurants);
+//    }
+//
+//    public List<Restaurant> findByCuisine(String cuisine) {
+//
+//        List<Restaurant> result = new ArrayList<>();
+//
+//        for (Restaurant restaurant : restaurants) {
+//
+//            if (restaurant.getCuisine().equalsIgnoreCase(cuisine)) {
+//                result.add(restaurant);
+//            }
+//        }
+//
+//        return result;
+//    }
+//
+//    public List<Restaurant> findByDish(String dish) {
+//
+//        List<Restaurant> result = new ArrayList<>();
+//
+//        for (Restaurant restaurant : restaurants) {
+//
+//            for (String restaurantDish : restaurant.getDishes()) {
+//
+//                if (restaurantDish.equalsIgnoreCase(dish)) {
+//                    result.add(restaurant);
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return result;
+//    }
+//
+//    public List<Restaurant> findByMaxPrice(int maxPrice) {
+//
+//        List<Restaurant> result = new ArrayList<>();
+//
+//        for (Restaurant restaurant : restaurants) {
+//
+//            if (restaurant.getAverageCheck() <= maxPrice) {
+//                result.add(restaurant);
+//            }
+//        }
+//
+//        return result;
+//    }
 
     public List<Restaurant> filter(RestaurantFilter f) {
 
@@ -116,14 +104,12 @@ public class RestaurantDatabase {
 
     private boolean matches(Restaurant restaurant, RestaurantFilter f) {
 
-        if (f.getCuisine() != null
-                && !containsIgnoreCase(restaurant.getCuisine(), f.getCuisine())) {
+        if (f.getCuisine() != null && !containsIgnoreCase(restaurant.getCuisine(), f.getCuisine())) {
             return false;
         }
 
         if (f.getDish() != null) {
-            boolean dishFound = restaurant.getDishes().stream()
-                    .anyMatch(d -> containsIgnoreCase(d, f.getDish()));
+            boolean dishFound = restaurant.getDishes().stream().anyMatch(d -> containsIgnoreCase(d, f.getDish()));
             if (!dishFound) {
                 return false;
             }
@@ -140,8 +126,7 @@ public class RestaurantDatabase {
     }
 
     private static boolean containsIgnoreCase(String value, String query) {
-        return value != null
-                && value.toLowerCase().contains(query.toLowerCase());
+        return value != null && value.toLowerCase().contains(query.toLowerCase());
     }
 
     public List<String> getAllCuisines() {

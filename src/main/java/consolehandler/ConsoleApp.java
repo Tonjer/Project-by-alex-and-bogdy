@@ -13,9 +13,11 @@ public class ConsoleApp {
 
     public void run() {
         System.out.println("Бот 'Где поесть?' запущен!");
+        System.out.println("Для помощи введите /help");
+        System.out.println("Для закрытия программы введите /exit");
         printMainMenu();
         while (true) {
-            System.out.println(">");
+            System.out.print("> ");
             String input = ConsoleReader.scanner().nextLine().trim();
             if (input.isEmpty()) {
                 continue;
@@ -25,16 +27,20 @@ public class ConsoleApp {
                 case "exit":
                     System.out.println("До свидания! Приятного аппетита!");
                     return;
+                case "1":
+                    openFilters();
+                    break;
+                case "2":
+                case "3":
+                    System.out.println("🚧 Раздел находится в разработке.");
+                    break;
                 case "/help":
                 case "help":
                     printHelp();
                     break;
-                case "/filters":
-                case "фильтры":
-                    openFilters();
-                    break;
                 default:
-                    System.out.println("Неизвестная команда. Введите /help");
+                    System.out.println("Неизвестная команда. Введите 1-3 или /exit для выхода.");
+                    printMainMenu();
             }
         }
     }
@@ -59,17 +65,20 @@ public class ConsoleApp {
 
     private void printMainMenu() {
         System.out.println();
-        System.out.println("Главное меню команд:");
-        System.out.println("  /filters — подобрать заведения по типу еды, кухне и среднему чеку");
-        System.out.println("  /help    — список команд");
-        System.out.println("  /exit    — выход");
+        System.out.println("Выберите 1-3");
+        System.out.println("1. 🍕 Фильтры: тип еды, кухня, цена");
+        System.out.println("2. ⭐ Рейтинги и отзывы");
+        System.out.println("3. 📜 История посещений");
+        System.out.println("/exit — выход из программы");
     }
 
     private void printHelp() {
         System.out.println("Доступные команды:");
-        System.out.println("  /filters — фильтр по типу еды, кухне и среднему чеку");
-        System.out.println("  /help    — эта справка");
-        System.out.println("  /exit    — выход из программы");
+        System.out.println("  1      — 🍕 Фильтры: тип еды, кухня, цена");
+        System.out.println("  2      — ⭐ Рейтинги и отзывы (в разработке)");
+        System.out.println("  3      — 📜 История посещений (в разработке)");
+        System.out.println("  /help  — эта справка");
+        System.out.println("  /exit  — выход из программы");
         System.out.println("Внутри фильтров: выбирайте пункты цифрами, 0 — назад.");
     }
 }

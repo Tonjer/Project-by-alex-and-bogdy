@@ -11,25 +11,6 @@ public class Restaurant {
     private List<String> dishes;
     private int averageCheck;
 
-    public Restaurant() {
-    }
-
-    public Restaurant(
-            String id,
-            String name,
-            String address,
-            String cuisine,
-            List<String> dishes,
-            int averageCheck) {
-
-        this.id = id;
-        this.name = name;
-        this.address = address;
-        this.cuisine = cuisine;
-        this.dishes = dishes;
-        this.averageCheck = averageCheck;
-    }
-
     public String getId() {
         return id;
     }

@@ -6,12 +6,16 @@ public class RestaurantFilter {
     private int minCheck;
     private int maxCheck;
 
+    private static boolean isBlank(String s) {
+        return s == null || s.isBlank();
+    }
+
     public String getDish() {
         return dish;
     }
 
     public void setDish(String dish) {
-        this.dish = isBlank(dish) ? null : dish.trim();
+        this.dish = isBlank(dish) ? null : dish.trim(); 
     }
 
     public String getCuisine() {
@@ -50,7 +54,4 @@ public class RestaurantFilter {
         return sb.isEmpty() ? "Фильтры не заданы" : sb.toString().trim();
     }
 
-    private static boolean isBlank(String s) {
-        return s == null || s.isBlank();
-    }
 }
