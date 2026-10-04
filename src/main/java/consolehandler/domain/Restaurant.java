@@ -1,4 +1,4 @@
-package consolehandler;
+package consolehandler.domain;
 
 import java.util.List;
 
