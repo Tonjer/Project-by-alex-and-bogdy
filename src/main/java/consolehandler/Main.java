@@ -1,12 +1,11 @@
 package consolehandler;
 
-import consolehandler.handlers.ToLowerCase;
-import consolehandler.handlers.RemoveSpaces;
+import consolehandler.data.RestaurantDatabase;
 
 public class Main {
-    void main(String[] args){
-        var handler = new ToLowerCase();
-        var reader =  new ConsoleReader(handler);
-        reader.run();
+
+    public static void main(String[] args) {
+        RestaurantDatabase database = new RestaurantDatabase();
+        new ConsoleApp(database).run();
     }
 }
